@@ -15,7 +15,6 @@ public class ParserConfigTest extends TestCase {
 
     public void test_1() throws Exception {
         ParserConfig config = new ParserConfig(Thread.currentThread().getContextClassLoader());
-
         Model model = JSON.parseObject("{\"value\":123}", Model.class, config);
         Assert.assertEquals(123, model.value);
     }

@@ -8,10 +8,9 @@ import java.util.Arrays;
 import java.util.Collection;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertThat;
 
 @RunWith(Parameterized.class)
-public class FieldOrderTest2 {
+public class FieldOrder2Test {
     static class Person{
     public Person(String name,School school) {
         this.name=name;
@@ -40,21 +39,25 @@ public class FieldOrderTest2 {
         public void setName(String name) {
             this.name = name;
         }
-        School(String name){this.name=name;}
+        public School(String name){this.name=name;}
     }
+    private  Person p;
+    private  String Expected;
+    public void configure(String name,String schoolName){
+        School s=new School(schoolName);
+        this.p = new Person(name,s);
+        this.Expected="{\"name\":\""+name+"\",\"school\":{\"name\":\""+schoolName+"\"}}";
+    }
+
     @Parameterized.Parameters
     public static Collection<Object[]> data() {
         return Arrays.asList(new Object[][] {
-                {new Person("matteo",new School("Fermi")),"{\"name\":\"matteo\",\"school\":{\"name\":\"Fermi\"}}"},
-                {new Person("mirko",new School("Amaldi")),"{\"name\":\"mirko\",\"school\":{\"name\":\"Amaldi\"}}"},
-                {new Person("njb",new School("llyz")),"{\"name\":\"njb\",\"school\":{\"name\":\"llyz\"}}"}
+                {"njb","llyz"},
         });
     }
-    private final Person p;
-    private final String Expected;
-    public FieldOrderTest2(Person p, String Expected){
-        this.p = p;
-        this.Expected=Expected;
+
+    public FieldOrder2Test(String name, String schoolName){
+        configure(name,schoolName);
     }
     @Test
     public void test_field_order() throws Exception {
