@@ -14,6 +14,7 @@
         <sonar.organization>kobero98</sonar.organization>
         <sonar.host.url>https://sonarcloud.io</sonar.host.url>
     </properties>
+
     <dependencies>
         <dependency>
             <groupId>com.alibaba</groupId>
@@ -42,7 +43,6 @@
             <version>chargebee-1.0</version>
             <scope>test</scope>
         </dependency>
-
 
     </dependencies>
 
