@@ -13,7 +13,7 @@ import java.util.Arrays;
 import java.util.Collection;
 
 @RunWith(Parameterized.class)
-public class ParserConfigTest2 extends TestCase {
+public class ParserConfig2Test extends TestCase {
 
     private ParserConfig config0;
     private ParserConfig config1;
@@ -23,7 +23,7 @@ public class ParserConfigTest2 extends TestCase {
     public static class Model {
         public int value;
     }
-    public ParserConfigTest2(String param1,int expected){
+    public ParserConfig2Test(String param1, int expected){
         configure(param1,expected);
     }
 
