@@ -47,8 +47,6 @@ public class ParserConfig3Test extends TestCase {
         if(isProcessor) this.processor = this.new MyExtraProcessor();
         else this.processor = null;
 
-        //It actually could be possible to select any subset of features. For simplicity reasons we will consider only two subcases:
-        //Feature... features with no values && Feature... features = Feature.AllowArbitraryCommas
         if(isFeature) this.features = Feature.AllowArbitraryCommas;
         else this.features = null;
 
@@ -58,6 +56,7 @@ public class ParserConfig3Test extends TestCase {
     @Parameterized.Parameters
     public static Collection<Object[]> getParameters() {
         return Arrays.asList(new Object[][] {
+                {"{\"value\":123}", false, 14, false},
                 {"{\"value\":123}", true, 14, true}
                 // inputString	   proc	 val, feat
         });

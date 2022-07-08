@@ -52,7 +52,7 @@ public class FieldOrder2Test {
     @Parameterized.Parameters
     public static Collection<Object[]> data() {
         return Arrays.asList(new Object[][] {
-                {"njb","llyz"},
+            //    {"njb","llyz"},
         });
     }
 

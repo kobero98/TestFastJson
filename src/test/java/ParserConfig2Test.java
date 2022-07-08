@@ -38,7 +38,7 @@ public class ParserConfig2Test extends TestCase {
     @Parameterized.Parameters
     public static Collection<Object[]> data() {
         return Arrays.asList(new Object[][] {
-                {"{\"value\":123}",123}, //StringadiInput,Valore Atteso
+           //     {"{\"value\":123}",123}, //StringadiInput,Valore Atteso
         });
     }
     @Test
